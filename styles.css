@@ -1,14 +1,29 @@
 :root {
     --grid-columns: 0;
     --grid-rows: 0;
-  }
+}
+
+.slider-container{
+    display: flex;
+    justify-content: center;
+}
+
+.grid-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #grid{
     display: grid;
-    justify-content: center;
-    grid-template-rows: repeat(var(--grid-rows), 10px);
-    grid-template-columns: repeat(var(--grid-columns), 10px);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
     grid-gap: 0px;
+    height: 80vh;
+    width: 80vh;
+    min-height: 50px;
+    min-width: 50px;
+    justify-content: center;
 }
 
 .grid-item{
