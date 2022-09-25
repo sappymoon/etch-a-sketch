@@ -1,6 +1,5 @@
-let r = 0;
-let g = 0;
-let b = 0;
+let color = '#000000';
+console.log(document.getElementById("color-picker").value);
 
 //changes grid based on slider value
 function changeGrid(){
@@ -19,7 +18,7 @@ function changeGrid(){
         let gridItem = document.createElement('div');
         grid.appendChild(gridItem)
         gridItem.onmouseover = function(){
-            this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            this.style.backgroundColor = color;
         }
     }
 }
@@ -35,7 +34,7 @@ function defaultGrid(){
         let gridItem = document.createElement('div');
         grid.appendChild(gridItem)
         gridItem.onmouseover = function(){
-            this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            this.style.backgroundColor = color;
         }
     }
 }
@@ -43,26 +42,26 @@ function defaultGrid(){
 //change hover color
 function rgb(){
     grid.onmouseover = function(){
-        r = Math.floor(Math.random() * 255);
-        g = Math.floor(Math.random() * 255);
-        b = Math.floor(Math.random() * 255);
+        color = '#'+(Math.random().toString(16)+'00000').slice(2,8);
     }   
 }
 
 function black(){
     grid.onmouseover = function(){
-        r = 0;
-        g = 0;
-        b = 0;
+        color = '#000000';
     }   
 }
 
 function eraser(){
     grid.onmouseover = function(){
-        r = 255;
-        g = 255;
-        b = 255;
+        color = '#FFFFFF';
     }   
+}
+
+function pickColor(){
+    grid.onmouseover = function(){
+        color = document.getElementById("color-picker").value;
+    }
 }
 
 defaultGrid();
