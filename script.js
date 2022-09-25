@@ -4,6 +4,7 @@ let b = 0;
 
 //changes grid based on slider value
 function changeGrid(){
+    black();
     let grid = document.getElementById('grid');
     let sliderValue = document.getElementById('slider').value;
 
@@ -16,7 +17,7 @@ function changeGrid(){
 
     for(i = 0; i < sliderValue * sliderValue; i++){
         let gridItem = document.createElement('div');
-        grid.appendChild(gridItem).className = 'grid-item';
+        grid.appendChild(gridItem)
         gridItem.onmouseover = function(){
             this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         }
@@ -32,7 +33,7 @@ function defaultGrid(){
 
     for(i = 0; i < 16 * 16; i++){
         let gridItem = document.createElement('div');
-        grid.appendChild(gridItem).className = 'grid-item';
+        grid.appendChild(gridItem)
         gridItem.onmouseover = function(){
             this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         }

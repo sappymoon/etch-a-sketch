@@ -3,6 +3,10 @@
     --grid-rows: 0;
 }
 
+html{
+    background-color: rgb(250, 110, 92);
+}
+
 .grid-container{
     display: flex;
     justify-content: center;
@@ -20,6 +24,7 @@
 
 #grid{
     display: grid;
+    background-color: #ffffff;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-columns), 1fr);
     grid-gap: 0px;
@@ -28,10 +33,6 @@
     min-height: 50px;
     min-width: 50px;
     justify-content: center;
-}
-
-.grid-item{
-    border: 0px solid black;
 }
 
 .grid-size{
@@ -53,11 +54,11 @@
 }
 
 #slider{
-    height: 5px;
+    height: 0.5px;
     width: 100px;
     -webkit-appearance: none; 
     appearance: none;
-    background: #b6b1b1;
+    background: #000000;
     border-radius: 10px;
 }
 
@@ -75,14 +76,14 @@
     height: 5px;
     -webkit-appearance: none; 
     appearance: none;
-    cursor: pointer;
 }
 
 #dimensions{
     display: flex;
     justify-content: center;
     font-size: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    font-weight: bold;
 }
 
 .button-container{
@@ -90,12 +91,86 @@
     justify-content: center;
     margin-top: 10px;
     gap: 5px;
+    flex-wrap: wrap;
 }
 
 .button{
     font-size: 5px;
+    border-width: 0px;
+    font-weight: bold;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5%;
+    color: rgb(250, 110, 92);
+    background-color: #ffffff;
+    border-width: 0.8px;
+    border-color: #000000;
 }
 
-#rgb{
-    background-color: #5ea12b;
+#clear:active{
+    color: #000000;
+}
+
+#rgb:focus{
+    color: #ff9900;
+    background-color: #d10000;
+    border-color: #920000;
+    animation-name: rgb;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rgb{
+    0%{
+        background-color: #d10000;
+        border-color: #920000;
+        color: #ff9900;
+    }
+    14.3%{
+        background-color: #ff9900;
+        border-color: #c98900;
+        color: #fffb00;
+    }
+    28.6%{
+        background-color: #fffb00;
+        border-color: #c4b700;
+        color: #009c08;
+    }
+    42.9%{
+        background-color: #009c08;
+        border-color: #006d24;
+        color: #0099ff;
+    }
+    57.2%{
+        background-color: #0099ff;
+        border-color: #005c86;
+        color: #3700ff;
+    }
+    71.5%{
+        background-color: #3700ff;
+        border-color: #080079;
+        color: #9100f1;
+    }
+    85.8%{
+        background-color: #9100f1;
+        border-color: #560079;
+        color: #d10000;
+    }
+    100%{
+        background-color: #d10000;
+        border-color: #920000;
+        color: #ff9900;
+    }
+}
+
+#black:focus{
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#eraser:focus{
+    color: #000000;
+    background-color: #ff79dd;
 }

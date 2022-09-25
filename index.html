@@ -7,7 +7,6 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-
     <div class="slider-container">
         <input type="range" min="1" max="100" value="16" id="slider" oninput="changeGrid()">
     </div>
@@ -21,10 +20,10 @@
     </div>
 
     <div class="button-container">
-        <button class="button" onclick="changeGrid()">Clear Grid</button>
-        <button class="button" onclick="rgb()">RGB</button>
-        <button class="button" onclick="black()">Black</button>
-        <button class="button" onclick="eraser()">Eraser</button>
+        <button class="button" id="clear" onclick="changeGrid()">Reset</button>
+        <button class="button" id="rgb" onclick="rgb()">Rainbow</button>
+        <button class="button" id="black" onclick="black()">Black</button>
+        <button class="button" id="eraser" onclick="eraser()">Eraser</button>
     </div>
 
     <script src="script.js"></script>
