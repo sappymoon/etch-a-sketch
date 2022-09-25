@@ -1,8 +1,11 @@
+let r = 0;
+let g = 0;
+let b = 0;
+
 //changes grid based on slider value
 function changeGrid(){
     let grid = document.getElementById('grid');
     let sliderValue = document.getElementById('slider').value;
-    let gridParent = document.getElementsByClassName('grid-flex');
 
     grid.innerHTML = ''; //resets grid
 
@@ -15,7 +18,7 @@ function changeGrid(){
         let gridItem = document.createElement('div');
         grid.appendChild(gridItem).className = 'grid-item';
         gridItem.onmouseover = function(){
-            this.style.backgroundColor = 'black';
+            this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         }
     }
 }
@@ -23,8 +26,6 @@ function changeGrid(){
 //creates defualt 16x16 grid
 function defaultGrid(){
     let grid = document.getElementById('grid');
-    let sliderValue = document.getElementById('slider').value;
-    let gridParent = document.getElementsByClassName('grid-flex');
 
     grid.style.setProperty('--grid-rows', 16);
     grid.style.setProperty('--grid-columns', 16);
@@ -33,9 +34,34 @@ function defaultGrid(){
         let gridItem = document.createElement('div');
         grid.appendChild(gridItem).className = 'grid-item';
         gridItem.onmouseover = function(){
-            this.style.backgroundColor = 'black';
+            this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         }
     }
+}
+
+//change hover color
+function rgb(){
+    grid.onmouseover = function(){
+        r = Math.floor(Math.random() * 255);
+        g = Math.floor(Math.random() * 255);
+        b = Math.floor(Math.random() * 255);
+    }   
+}
+
+function black(){
+    grid.onmouseover = function(){
+        r = 0;
+        g = 0;
+        b = 0;
+    }   
+}
+
+function eraser(){
+    grid.onmouseover = function(){
+        r = 255;
+        g = 255;
+        b = 255;
+    }   
 }
 
 defaultGrid();

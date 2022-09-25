@@ -14,12 +14,17 @@
 
     <div id="dimensions">16 x 16</div>
 
-    <div class="grid-flex">
-        <div id="grid"></div>
+    <div class="grid-container">
+        <div class="grid-border">
+            <div id="grid"></div>
+        </div>
     </div>
 
     <div class="button-container">
-        <button class="button" onclick="changeGrid()">Reset Grid</button>
+        <button class="button" onclick="changeGrid()">Clear Grid</button>
+        <button class="button" onclick="rgb()">RGB</button>
+        <button class="button" onclick="black()">Black</button>
+        <button class="button" onclick="eraser()">Eraser</button>
     </div>
 
     <script src="script.js"></script>
